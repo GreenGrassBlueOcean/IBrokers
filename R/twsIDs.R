@@ -123,8 +123,8 @@
        VERIFY_MESSAGE_API = "65",
        VERIFY_COMPLETED = "66",
        DISPLAY_GROUP_LIST = "67",
-       DISPLAY_GROUP_UPDATED = "68"
-       VERIFY_AND_ AUTHMESSAGE_API  = "69",
+       DISPLAY_GROUP_UPDATED = "68",
+       VERIFY_AND_AUTHMESSAGE_API  = "69",
        VERIFY_ANDAUTH_COMPLETED  = "70",
        POSITION_MULTI  = "71",
        POSITION_MULTI_END  = "72",
@@ -158,6 +158,226 @@
        ORDER_BOUND  = "100",
        COMPLETED_ORDER  = "101",
        COMPLETED_ORDER_SEND  = "102")
+
+
+.twsMinServerVer <- list(
+          MIN_VERSION  = "38",
+          HISTORICAL_DATA  = "24",
+          CURRENT_TIME  = "33",
+          REAL_TIME_BARS  = "34",
+          SCALE_ORDERS  = "35",
+          SNAPSHOT_MKT_DATA  = "35",
+          SSHORT_COMBO_LEGS  = "35",
+          WHAT_IF_ORDERS  = "36",
+          CONTRACT_CONID  = "37",
+          PTA_ORDERS  = "39",
+          FUNDAMENTAL_DATA  = "40",
+          DELTA_NEUTRAL  = "40",
+          CONTRACT_DATA_CHAIN  = "40",
+          SCALE_ORDERS2  = "40",
+          ALGO_ORDERS  = "41",
+          EXECUTION_DATA_CHAIN  = "42",
+          NOT_HELD  = "44",
+          SEC_ID_TYPE  = "45",
+          PLACE_ORDER_CONID  = "46",
+          REQ_MKT_DATA_CONID  = "47",
+          REQ_CALC_IMPLIED_VOLAT  = "49",
+          REQ_CALC_OPTION_PRICE  = "50",
+          CANCEL_CALC_IMPLIED_VOLAT  = "50",
+          CANCEL_CALC_OPTION_PRICE  = "50",
+          SSHORTX_OLD  = "51",
+          SSHORTX  = "52",
+          REQ_GLOBAL_CANCEL  = "53",
+          HEDGE_ORDERS  = "54",
+          REQ_MARKET_DATA_TYPE  = "55",
+          OPT_OUT_SMART_ROUTING  = "56",
+          SMART_COMBO_ROUTING_PARAMS  = "57",
+          DELTA_NEUTRAL_CONID  = "58",
+          SCALE_ORDERS3  = "60",
+          ORDER_COMBO_LEGS_PRICE  = "61",
+          TRAILING_PERCENT  = "62",
+          DELTA_NEUTRAL_OPEN_CLOSE  = "66",
+          ACCT_SUMMARY  = "67",
+          TRADING_CLASS  = "68",
+          SCALE_TABLE  = "69",
+          LINKING  = "70",
+          ALGO_ID  = "71",
+          OPTIONAL_CAPABILITIES  = "72",
+          ORDER_SOLICITED  = "73",
+          LINKING_AUTH  = "74",
+          PRIMARYEXCH  = "75",
+          RANDOMIZE_SIZE_AND_PRICE  = "76",
+          FRACTIONAL_POSITIONS  = "101",
+          PEGGED_TO_BENCHMARK  = "102",
+          MODELS_SUPPORT  = "103",
+          SEC_DEF_OPT_PARAMS_REQ  = "104",
+          EXT_OPERATOR  = "105",
+          SOFT_DOLLAR_TIER  = "106",
+          REQ_FAMILY_CODES  = "107",
+          REQ_MATCHING_SYMBOLS  = "108",
+          PAST_LIMIT  = "109",
+          MD_SIZE_MULTIPLIER  = "110",
+          CASH_QTY  = "111",
+          REQ_MKT_DEPTH_EXCHANGES  = "112",
+          TICK_NEWS  = "113",
+          SMART_COMPONENTS  = "114",
+          REQ_NEWS_PROVIDERS  = "115",
+          REQ_NEWS_ARTICLE  = "116",
+          REQ_HISTORICAL_NEWS  = "117",
+          REQ_HEAD_TIMESTAMP  = "118",
+          REQ_HISTOGRAM_DATA  = "119",
+          SERVICE_DATA_TYPE  = "120",
+          AGG_GROUP  = "121",
+          UNDERLYING_INFO  = "122",
+          CANCEL_HEADTIMESTAMP  = "123",
+          SYNT_REALTIME_BARS  = "124",
+          CFD_REROUTE  = "125",
+          MARKET_RULES  = "126",
+          PNL  = "127",
+          NEWS_QUERY_ORIGINS  = "128",
+          UNREALIZED_PNL  = "129",
+          HISTORICAL_TICKS  = "130",
+          MARKET_CAP_PRICE  = "131",
+          PRE_OPEN_BID_ASK  = "132",
+          REAL_EXPIRATION_DATE  = "134",
+          REALIZED_PNL  = "135",
+          LAST_LIQUIDITY  = "136",
+          TICK_BY_TICK  = "137",
+          DECISION_MAKER  = "138",
+          MIFID_EXECUTION  = "139",
+          TICK_BY_TICK_IGNORE_SIZE  = "140",
+          AUTO_PRICE_FOR_HEDGE  = "141",
+          WHAT_IF_EXT_FIELDS  = "142",
+          SCANNER_GENERIC_OPTS  = "143",
+          API_BIND_ORDER  = "144",
+          ORDER_CONTAINER  = "145",
+          SMART_DEPTH  = "146",
+          REMOVE_NULL_ALL_CASTING  = "147",
+          D_PEG_ORDERS  = "148",
+          MKT_DEPTH_PRIM_EXCHANGE  = "149",
+          COMPLETED_ORDERS  = "150",
+          PRICE_MGMT_ALGO  = "151")
+
+.EClientErrors <- list(
+              ALREADY_CONNECTED = list( Code = "501", Message = "Already Connected."),
+              CONNECT_FAIL  = list( Code = "502", "Could not connect to TWS. Confirm that --Enable ActiveX and Socket Clients--  is enabled and connection port is the same as --Socket Port-- on the TWS --Edit->Global Configuration...->API->Settings-- menu.  Live Trading ports: TWS: 7496  IB Gateway: 4001. Simulated Trading ports for installations of version 954.1 or newer: TWS: 7497  IB Gateway: 4002"),
+              UPDATE_TWS  = list( Code = "503", Message = "The TWS is out of date and must be upgraded."),
+              NOT_CONNECTED  = list( Code = "504", Message = "Not connected"),
+              UNKNOWN_ID  = list( Code = "505", Message = "Fatal Error: Unknown message id."),
+              FAIL_SEND_REQMKT  = list( Code = "510", Message = "Request Market Data Sending Error - "),
+              FAIL_SEND_CANMKT  = list( Code = "511", Message = "Cancel Market Data Sending Error - "),
+              FAIL_SEND_ORDER  = list( Code = "512", Message = "Order Sending Error - "),
+              FAIL_SEND_ACCT  = list( Code = "513", Message = "Account Update Request Sending Error -"),
+              FAIL_SEND_EXEC  = list( Code = "514", Message = "Request For Executions Sending Error -"),
+              FAIL_SEND_CORDER  = list( Code = "515", Message = "Cancel Order Sending Error -"),
+              FAIL_SEND_OORDER  = list( Code = "516", Message = "Request Open Order Sending Error -"),
+              UNKNOWN_CONTRACT  = list( Code = "517", Message = "Unknown contract. Verify the contract details supplied."),
+              FAIL_SEND_REQCONTRACT  = list( Code = "518", Message = "Request Contract Data Sending Error - "),
+              FAIL_SEND_REQMKTDEPTH  = list( Code = "519", Message = "Request Market Depth Sending Error - "),
+              FAIL_SEND_CANMKTDEPTH  = list( Code = "520", Message = "Cancel Market Depth Sending Error - "),
+              FAIL_SEND_SERVER_LOG_LEVEL  = list( Code = "521", Message = "Set Server Log Level Sending Error - "),
+              FAIL_SEND_FA_REQUEST  = list( Code = "522", Message = "FA Information Request Sending Error - "),
+              FAIL_SEND_FA_REPLACE  = list( Code = "523", Message = "FA Information Replace Sending Error - "),
+              FAIL_SEND_REQSCANNER  = list( Code = "524", Message = "Request Scanner Subscription Sending Error - "),
+              FAIL_SEND_CANSCANNER  = list( Code = "525", Message = "Cancel Scanner Subscription Sending Error - "),
+              FAIL_SEND_REQSCANNERPARAMETERS  = list( Code = "526", Message = "Request Scanner Parameter Sending Error - "),
+              FAIL_SEND_REQHISTDATA  = list( Code = "527", Message = "Request Historical Data Sending Error - "),
+              FAIL_SEND_CANHISTDATA  = list( Code = "528", Message = "Request Historical Data Sending Error - "),
+              FAIL_SEND_REQRTBARS  = list( Code = "529", Message = "Request Real-time Bar Data Sending Error - "),
+              FAIL_SEND_CANRTBARS  = list( Code = "530", Message = "Cancel Real-time Bar Data Sending Error - "),
+              FAIL_SEND_REQCURRTIME  = list( Code = "531", Message = "Request Current Time Sending Error - "),
+              FAIL_SEND_REQFUNDDATA  = list( Code = "532", Message = "Request Fundamental Data Sending Error - "),
+              FAIL_SEND_CANFUNDDATA  = list( Code = "533", Message = "Cancel Fundamental Data Sending Error - "),
+              FAIL_SEND_REQCALCIMPLIEDVOLAT  = list( Code = "534", Message = "Request Calculate Implied Volatility Sending Error - "),
+              FAIL_SEND_REQCALCOPTIONPRICE  = list( Code = "535", Message = "Request Calculate Option Price Sending Error - "),
+              FAIL_SEND_CANCALCIMPLIEDVOLAT  = list( Code = "536", Message = "Cancel Calculate Implied Volatility Sending Error - "),
+              FAIL_SEND_CANCALCOPTIONPRICE  = list( Code = "537", Message = "Cancel Calculate Option Price Sending Error - "),
+              FAIL_SEND_REQGLOBALCANCEL  = list( Code = "538", Message = "Request Global Cancel Sending Error - "),
+              FAIL_SEND_REQMARKETDATATYPE  = list( Code = "539", Message = "Request Market Data Type Sending Error - "),
+              FAIL_SEND_REQPOSITIONS  = list( Code = "540", Message = "Request Positions Sending Error - "),
+              FAIL_SEND_CANPOSITIONS  = list( Code = "541", Message = "Cancel Positions Sending Error - "),
+              FAIL_SEND_REQACCOUNTDATA  = list( Code = "542", Message = "Request Account Data Sending Error - "),
+              FAIL_SEND_CANACCOUNTDATA  = list( Code = "543", Message = "Cancel Account Data Sending Error - "),
+              FAIL_SEND_VERIFYREQUEST  = list( Code = "544", Message = "Verify Request Sending Error - "),
+              FAIL_SEND_VERIFYMESSAGE  = list( Code = "545", Message = "Verify Message Sending Error - "),
+              FAIL_SEND_QUERYDISPLAYGROUPS  = list( Code = "546", Message = "Query Display Groups Sending Error - "),
+              FAIL_SEND_SUBSCRIBETOGROUPEVENTS  = list( Code = "547", Message = "Subscribe To Group Events Sending Error - "),
+              FAIL_SEND_UPDATEDISPLAYGROUP  = list( Code = "548", Message = "Update Display Group Sending Error - "),
+              FAIL_SEND_UNSUBSCRIBEFROMGROUPEVENTS  = list( Code = "549", Message = "Unsubscribe From Group Events Sending Error - "),
+              BAD_LENGTH  = list( Code = "507", Message = "Bad message length"),
+              BAD_MESSAGE  = list( Code = "508", Message = "Bad message"),
+              UNSUPPORTED_VERSION  = list( Code = "506", Message = "Unsupported version"),
+              FAIL_SEND_VERIFYANDAUTHREQUEST  = list( Code = "551", Message = "Verify And Auth Request Sending Error - "),
+              FAIL_SEND_VERIFYANDAUTHMESSAGE  = list( Code = "552", Message = "Verify And Auth Message Sending Error - "),
+              FAIL_SEND_REQPOSITIONSMULTI  = list( Code = "553", Message = "Request Positions Multi Sending Error - "),
+              FAIL_SEND_CANPOSITIONSMULTI  = list( Code = "554", Message = "Cancel Positions Multi Sending Error - "),
+              FAIL_SEND_REQACCOUNTUPDATESMULTI  = list( Code = "555", Message = "Request Account Updates Multi Sending Error - "),
+              FAIL_SEND_CANACCOUNTUPDATESMULTI  = list( Code = "556", Message = "Cancel Account Updates Multi Sending Error - "),
+              FAIL_SEND_REQSECDEFOPTPARAMS  = list( Code = "557", Message = "Request Security Definition Option Parameters Sending Error - "),
+              FAIL_SEND_REQSOFTDOLLARTIERS  = list( Code = "558", Message = "Request Soft Dollar Tiers Sending Error - "),
+              FAIL_SEND_REQFAMILYCODES  = list( Code = "559", Message = "Request Family Codes Sending Error - "),
+              FAIL_SEND_REQMATCHINGSYMBOLS  = list( Code = "560", Message = "Request Matching Symbols Sending Error - "),
+              FAIL_SEND_REQMKTDEPTHEXCHANGES  = list( Code = "561", Message = "Request Market Depth Exchanges Sending Error - "),
+              FAIL_SEND_REQSMARTCOMPONENTS  = list( Code = "562", Message = "Request Smart Components Sending Error - "),
+              FAIL_SEND_REQNEWSPROVIDERS  = list( Code = "563", Message = "Request News Providers Sending Error - "),
+              FAIL_SEND_REQNEWSARTICLE  = list( Code = "564", Message = "Request News Article Sending Error - "),
+              FAIL_SEND_REQHISTORICALNEWS  = list( Code = "565", Message = "Request Historical News Sending Error - "),
+              FAIL_SEND_REQHEADTIMESTAMP  = list( Code = "566", Message = "Request Head Time Stamp Sending Error - "),
+              FAIL_SEND_REQHISTOGRAMDATA  = list( Code = "567", Message = "Request Histogram Data Sending Error - "),
+              FAIL_SEND_CANCELHISTOGRAMDATA  = list( Code = "568", Message = "Cancel Request Histogram Data Sending Error - "),
+              FAIL_SEND_CANCELHEADTIMESTAMP  = list( Code = "569", Message = "Cancel Head Time Stamp Sending Error - "),
+              FAIL_SEND_REQMARKETRULE  = list( Code = "570", Message = "Request Market Rule Sending Error - "),
+              FAIL_SEND_REQPNL  = list( Code = "571", Message = "Request PnL Sending Error - "),
+              FAIL_SEND_CANCELPNL  = list( Code = "572", Message = "Cancel PnL Sending Error - "),
+              FAIL_SEND_REQPNLSINGLE  = list( Code = "573", Message = "Request PnL Single Error - "),
+              FAIL_SEND_CANCELPNLSINGLE  = list( Code = "574", Message = "Cancel PnL Single Sending Error - "),
+              FAIL_SEND_REQHISTORICALTICKS  = list( Code = "575", Message = "Request Historical Ticks Error - "),
+              FAIL_SEND_REQTICKBYTICKDATA  = list( Code = "576", Message = "Request Tick-By-Tick Data Sending Error - "),
+              FAIL_SEND_CANCELTICKBYTICKDATA  = list( Code = "577", Message = "Cancel Tick-By-Tick Data Sending Error - "),
+              FAIL_SEND_REQCOMPLETEDORDERS  = list( Code = "578", Message = "Request Completed Orders Sending Error - "),
+              FAIL_GENERIC  = list( Code = "-1", Message = "Specific error message needs to be given for these requests! ")
+)
+
+
+
+CodeMsgPair <- function(Eclient){
+  print(Eclient$Message)
+  return(Eclient$Code)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 `.twsERR` <-
 structure(c("Max rate of messages per second has been exceeded.", 

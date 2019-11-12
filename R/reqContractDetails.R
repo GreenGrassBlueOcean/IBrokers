@@ -104,3 +104,95 @@ function(conn, Contract, reqId="1", verbose=FALSE,
     }
     return(contracts)
 }
+
+
+
+# 
+# /**
+#   * @brief Requests contract information.\n
+# * This method will provide all the contracts matching the contract provided. It can also be used to retrieve complete options and futures chains. This information will be returned at EWrapper:contractDetails. Though it is now (in API version > 9.72.12) advised to use reqSecDefOptParams for that purpose. \n
+# * @param reqId the unique request identifier.\n
+# * @param contract the contract used as sample to query the available contracts. Typically, it will contain the Contract::Symbol, Contract::Currency, Contract::SecType, Contract::Exchange\n
+# * @sa EWrapper::contractDetails, EWrapper::contractDetailsEnd
+# */
+#   public void reqContractDetails(int reqId, Contract contract)
+# {
+#   if (!CheckConnection())
+#     return;
+#   
+#   if (!IsEmpty(contract.SecIdType) || !IsEmpty(contract.SecId))
+#   {
+#     if (!CheckServerVersion(reqId, MinServerVer.SEC_ID_TYPE, " It does not support secIdType not secId attributes"))
+#       return;
+#   }
+#   
+#   if (!IsEmpty(contract.TradingClass))
+#   {
+#     if (!CheckServerVersion(reqId, MinServerVer.TRADING_CLASS, " It does not support the TradingClass parameter when requesting contract details."))
+#       return;
+#   }
+#   
+#   if (!IsEmpty(contract.PrimaryExch) && !CheckServerVersion(reqId, MinServerVer.LINKING,
+#                                                             " It does not support PrimaryExch parameter when requesting contract details."))
+#     return;
+#   
+#   
+#   int VERSION = 8;
+#   
+#   var paramsList = new BinaryWriter(new MemoryStream());
+#   var lengthPos = prepareBuffer(paramsList);
+#   
+#   paramsList.AddParameter(OutgoingMessages.RequestContractData);
+#   paramsList.AddParameter(VERSION);//version
+#   if (serverVersion >= MinServerVer.CONTRACT_DATA_CHAIN)
+#   {
+#     paramsList.AddParameter(reqId);
+#   }
+#   if (serverVersion >= MinServerVer.CONTRACT_CONID)
+#   {
+#     paramsList.AddParameter(contract.ConId);
+#   }
+#   paramsList.AddParameter(contract.Symbol);
+#   paramsList.AddParameter(contract.SecType);
+#   paramsList.AddParameter(contract.LastTradeDateOrContractMonth);
+#   paramsList.AddParameter(contract.Strike);
+#   paramsList.AddParameter(contract.Right);
+#   if (serverVersion >= 15)
+#   {
+#     paramsList.AddParameter(contract.Multiplier);
+#   }
+#   
+#   if (serverVersion >= MinServerVer.PRIMARYEXCH)
+#   {
+#     paramsList.AddParameter(contract.Exchange);
+#     paramsList.AddParameter(contract.PrimaryExch);
+#   }
+#   else if (serverVersion >= MinServerVer.LINKING)
+#   {
+#     if (!IsEmpty(contract.PrimaryExch) && (contract.Exchange == "BEST" || contract.Exchange == "SMART"))
+#     {
+#       paramsList.AddParameter(contract.Exchange + ":" + contract.PrimaryExch);
+#     }
+#     else
+#     {
+#       paramsList.AddParameter(contract.Exchange);
+#     }
+#   }
+#   
+#   paramsList.AddParameter(contract.Currency);
+#   paramsList.AddParameter(contract.LocalSymbol);
+#   if (serverVersion >= MinServerVer.TRADING_CLASS)
+#   {
+#     paramsList.AddParameter(contract.TradingClass);
+#   }
+#   if (serverVersion >= 31)
+#   {
+#     paramsList.AddParameter(contract.IncludeExpired);
+#   }
+#   if (serverVersion >= MinServerVer.SEC_ID_TYPE)
+#   {
+#     paramsList.AddParameter(contract.SecIdType);
+#     paramsList.AddParameter(contract.SecId);
+#   }
+#   CloseAndSend(reqId, paramsList, lengthPos, EClientErrors.FAIL_SEND_REQCONTRACT);
+#   }

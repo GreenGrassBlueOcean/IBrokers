@@ -1,5 +1,4 @@
-`errorHandler` <-
-function(con, verbose, OK=NULL) {
+errorHandler <- function(con, verbose, OK=NULL) {
   err <- readBin(con,character(),4)
 
   if(as.numeric(err[3]) %in% OK || as.numeric(err[3]) > 1000) {
